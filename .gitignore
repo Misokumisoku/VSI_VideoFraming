@@ -1,0 +1,30 @@
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# macOS and editor metadata
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime outputs and downloaded model caches
+output/
+weights/
+*.pt
+*.pth
+tmp/
+
+# Local media and datasets
+test_data/
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
