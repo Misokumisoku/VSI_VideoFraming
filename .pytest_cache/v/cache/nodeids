@@ -1,0 +1,7 @@
+[
+  "tests/test_vsi.py::test_constant_missing_branch_does_not_add_bias",
+  "tests/test_vsi.py::test_gaussian_subtitle_peak_and_window",
+  "tests/test_vsi.py::test_iterative_search_focuses_and_is_deterministic",
+  "tests/test_vsi.py::test_ocr_observations_become_timed_subtitle_segments",
+  "tests/test_vsi.py::test_paper_soft_threshold_equation"
+]

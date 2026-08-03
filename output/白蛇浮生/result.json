@@ -1,0 +1,132 @@
+{
+  "video": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/test_data/baishe.mp4",
+  "mode": "visual+subtitle",
+  "subtitle_source": "OCR:/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/ocr_subtitles.json",
+  "subtitle_segments": 27,
+  "text_model": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+  "question": "寻找有人骑马或出现在道路上的场景。",
+  "objects": [
+    "person",
+    "horse",
+    "road"
+  ],
+  "fps": 30.0,
+  "total_frames": 4789,
+  "rounds": 4,
+  "visited_frames": [
+    0,
+    12,
+    67,
+    126,
+    150,
+    288,
+    319,
+    486,
+    638,
+    740,
+    958,
+    1141,
+    1271,
+    1277,
+    1596,
+    1915,
+    2071,
+    2091,
+    2092,
+    2100,
+    2124,
+    2139,
+    2146,
+    2147,
+    2151,
+    2155,
+    2156,
+    2179,
+    2180,
+    2182,
+    2183,
+    2184,
+    2185,
+    2186,
+    2187,
+    2188,
+    2189,
+    2190,
+    2191,
+    2192,
+    2193,
+    2194,
+    2195,
+    2234,
+    2328,
+    2492,
+    2554,
+    2558,
+    2687,
+    2779,
+    2783,
+    2853,
+    2872,
+    2873,
+    3192,
+    3511,
+    3830,
+    4114,
+    4150,
+    4192,
+    4208,
+    4238,
+    4469,
+    4788
+  ],
+  "keyframes": [
+    {
+      "frame_index": 288,
+      "timestamp_seconds": 9.6,
+      "score": 8.405927528615143,
+      "image": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/frames/keyframe_01_frame_288.jpg"
+    },
+    {
+      "frame_index": 319,
+      "timestamp_seconds": 10.633333333333333,
+      "score": 8.428311689220202,
+      "image": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/frames/keyframe_02_frame_319.jpg"
+    },
+    {
+      "frame_index": 2139,
+      "timestamp_seconds": 71.3,
+      "score": 8.537447159934834,
+      "image": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/frames/keyframe_03_frame_2139.jpg"
+    },
+    {
+      "frame_index": 2146,
+      "timestamp_seconds": 71.53333333333333,
+      "score": 8.373507582881189,
+      "image": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/frames/keyframe_04_frame_2146.jpg"
+    },
+    {
+      "frame_index": 2147,
+      "timestamp_seconds": 71.56666666666666,
+      "score": 8.266225500827359,
+      "image": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/frames/keyframe_05_frame_2147.jpg"
+    },
+    {
+      "frame_index": 2554,
+      "timestamp_seconds": 85.13333333333334,
+      "score": 8.618221189141543,
+      "image": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/frames/keyframe_06_frame_2554.jpg"
+    },
+    {
+      "frame_index": 2558,
+      "timestamp_seconds": 85.26666666666667,
+      "score": 8.54776299809818,
+      "image": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/frames/keyframe_07_frame_2558.jpg"
+    },
+    {
+      "frame_index": 4114,
+      "timestamp_seconds": 137.13333333333333,
+      "score": 8.290747366858014,
+      "image": "/Users/libu/Documents/THU Courses/Huawei/VSI_VideoFraming/output/白蛇浮生/frames/keyframe_08_frame_4114.jpg"
+    }
+  ]
+}
