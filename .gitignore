@@ -11,7 +11,9 @@ __pycache__/
 
 # Runtime outputs and downloaded model caches
 output/
-weights/
+weights/*
+!weights/sentence_transformer/
+!weights/sentence_transformer/**
 *.pt
 *.pth
 tmp/

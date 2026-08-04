@@ -19,7 +19,7 @@ os.environ.setdefault("MPLCONFIGDIR", str(PROJECT_ROOT / "output" / "model_cache
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from vsi.adapters import SentenceTransformerMatcher, UltralyticsYOLOWorldScorer
+from vsi.adapters import DEFAULT_TEXT_MODEL, SentenceTransformerMatcher, UltralyticsYOLOWorldScorer
 from vsi.core import VSIConfig, select_keyframes, soft_threshold, subtitle_frame_scores
 from vsi.io import load_subtitles
 from vsi.ocr import extract_burned_subtitles
@@ -71,7 +71,7 @@ def main() -> None:
     parser.add_argument("--ocr-fps", type=float, default=2.0)
     parser.add_argument("--ocr-crop-top", type=float, default=0.62)
     parser.add_argument("--ocr-cache", type=Path, default=None)
-    parser.add_argument("--text-model", default="sentence-transformers/paraphrase-multilingual-mpnet-base-v2")
+    parser.add_argument("--text-model", default=str(DEFAULT_TEXT_MODEL))
     parser.add_argument("--top-k", type=int, default=8)
     parser.add_argument("--budget", type=int, default=64,
                         help="total number of frames evaluated by YOLO-World")

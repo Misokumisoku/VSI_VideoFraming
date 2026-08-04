@@ -49,7 +49,13 @@ python examples/run_vsi.py --subtitles "../test_data/白蛇：浮生.srt" \
   --question "什么时候有人骑马经过道路？"
 ```
 
-中文字幕默认由 `sentence-transformers/paraphrase-multilingual-mpnet-base-v2` 编码。若传入英文字幕，可用 `--text-model sentence-transformers/all-mpnet-base-v2` 严格切回论文模型。OCR 只负责恢复 VSI 所需的“文本+起止时间”；之后仍执行论文的余弦相似度、软阈值增强、高斯时间传播和跨模态融合。传 `--no-ocr` 可关闭语义分支。
+中文字幕默认由仓库中的扁平本地模型
+`weights/sentence_transformer/paraphrase-multilingual-mpnet-base-v2` 编码。该目录包含真实文件，
+不依赖 Hugging Face 缓存的 `snapshots -> blobs` 软链接。克隆后需要安装 Git LFS 并执行
+`git lfs pull`。若传入英文字幕，可用
+`--text-model sentence-transformers/all-mpnet-base-v2` 严格切回论文模型。OCR 只负责恢复 VSI
+所需的“文本+起止时间”；之后仍执行论文的余弦相似度、软阈值增强、高斯时间传播和跨模态融合。
+传 `--no-ocr` 可关闭语义分支。
 
 核心 API：
 
@@ -66,7 +72,7 @@ result = select_keyframes(
 print(result.frame_indices, result.timestamps)
 ```
 
-端到端模式使用 `opencv-python`、`ultralytics`、`easyocr` 和 `sentence-transformers`。使用 `SentenceTransformerMatcher` 计算问题/字幕余弦相似度，依次调用 `soft_threshold` 和 `subtitle_frame_scores` 得到逐帧文本分数；使用 `UltralyticsYOLOWorldScorer` 作为 `object_scorer`。模型权重首次使用时会下载。
+端到端模式使用 `opencv-python`、`ultralytics`、`easyocr` 和 `sentence-transformers`。使用 `SentenceTransformerMatcher` 计算问题/字幕余弦相似度，依次调用 `soft_threshold` 和 `subtitle_frame_scores` 得到逐帧文本分数；使用 `UltralyticsYOLOWorldScorer` 作为 `object_scorer`。SentenceTransformer 默认从上述本地目录离线加载；测试视频不纳入仓库，需要通过 `--video` 指定本机文件。
 
 ## 与作者公开代码的差异
 

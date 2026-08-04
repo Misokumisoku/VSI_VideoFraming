@@ -1,3 +1,2 @@
 *.pt filter=lfs diff=lfs merge=lfs -text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-output/model_cache/huggingface/hub/models--sentence-transformers--paraphrase-multilingual-mpnet-base-v2/blobs/b5722100700c48b74c9c199c5f39ff9493c94d1497f719e791d4bc3861d7714a filter=lfs diff=lfs merge=lfs -text
+weights/sentence_transformer/**/*.safetensors filter=lfs diff=lfs merge=lfs -text

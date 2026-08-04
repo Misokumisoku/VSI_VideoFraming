@@ -1,19 +1,30 @@
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Sequence
 
 import numpy as np
 
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_TEXT_MODEL = (
+    PROJECT_ROOT
+    / "weights"
+    / "sentence_transformer"
+    / "paraphrase-multilingual-mpnet-base-v2"
+)
+
+
 class SentenceTransformerMatcher:
     """Lazy all-mpnet-base-v2 subtitle matcher used by the VSI paper."""
 
-    def __init__(self, model: str = "sentence-transformers/all-mpnet-base-v2", device: str | None = None):
+    def __init__(self, model: str | Path = DEFAULT_TEXT_MODEL, device: str | None = None):
         try:
             from sentence_transformers import SentenceTransformer
         except ImportError as exc:
             raise RuntimeError("install the 'models' extra to use subtitle encoding") from exc
-        self.model = SentenceTransformer(model, device=device)
+        model = Path(model).expanduser().resolve() if Path(model).expanduser().exists() else str(model)
+        self.model = SentenceTransformer(str(model), device=device)
 
     def __call__(self, question: str, subtitles: Sequence[str]) -> np.ndarray:
         embeddings = self.model.encode([question, *subtitles], normalize_embeddings=True)
